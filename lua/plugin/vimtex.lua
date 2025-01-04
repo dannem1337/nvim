@@ -11,7 +11,7 @@ vim.cmd("syntax enable")
 -- viewer method:
 vim.g.vimtex_view_method = 'zathura'
 
--- Or with a generic interface:
+-- Or with a off interface:
 vim.g.vimtex_view_general_viewer = 'okular'
 
 -- Remove green highlighting in zathura
