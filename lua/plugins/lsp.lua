@@ -1,4 +1,4 @@
-return 
+return
 {
   -- Autocompletion
   {
@@ -31,7 +31,7 @@ return
     cmd = 'LspInfo',
     event = {'BufReadPre', 'BufNewFile'},
     dependencies = {
-      {'hrsh7th/cmp-nvim-lsp', 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim'},
+      {'hrsh7th/cmp-nvim-lsp', 'mason-org/mason.nvim', 'mason-org/mason-lspconfig.nvim'},
     },
     init = function()
       -- Reserve a space in the gutter
@@ -73,7 +73,7 @@ return
       -- servers you have installed in your system
       require('mason').setup({})
       require('mason-lspconfig').setup({
-        -- Replace the language servers listed here 
+        -- Replace the language servers listed here
         -- with the ones you want to install
         ensure_installed = {'lua_ls', 'rust_analyzer'},
         handlers = {
