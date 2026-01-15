@@ -69,6 +69,25 @@ return
         end,
       })
 
+      local lspconfig = require("lspconfig")
+      local configs = require("lspconfig.configs")
+      local util = require("lspconfig.util")
+
+      if not configs.my_custom_lsp then
+        configs.my_custom_lsp = {
+        default_config = {
+          cmd = { "/home/danyal/mzn-lsp/target/release/mzn-lsp" },
+          filetypes = { "zinc" },
+          root_dir = util.root_pattern(".git", "."),
+          settings = {},
+        },
+      }
+      end
+
+     lspconfig.my_custom_lsp.setup({})
+
+
+
       -- These are just examples. Replace them with the language
       -- servers you have installed in your system
       require('mason').setup({})
