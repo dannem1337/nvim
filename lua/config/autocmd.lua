@@ -8,10 +8,12 @@ vim.api.nvim_create_autocmd('FileType', {
         -- Save cursor position to restore later
         local curpos = vim.api.nvim_win_get_cursor(0)
         -- Search and replace trailing whitespaces
-        vim.cmd([[keeppatterns %s/\s\+$//e]])
+        vim.cmd([[keeppatterns %s/\(\s\|\t\)\+$//e]])
         vim.cmd([[keeppatterns %s/\r$//e]])
+        vim.cmd([[silent keeppatterns %v/\_s*\S/de]])
         vim.api.nvim_win_set_cursor(0, curpos)
       end,
     })
+
   end,
 })

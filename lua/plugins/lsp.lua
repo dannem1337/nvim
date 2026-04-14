@@ -73,10 +73,10 @@ return
       local configs = require("lspconfig.configs")
       local util = require("lspconfig.util")
 
-      if not configs.my_custom_lsp then
-        configs.my_custom_lsp = {
+      if not configs.mzn_lsp then
+        configs.mzn_lsp = {
         default_config = {
-          cmd = { "/home/danyal/mzn-lsp/target/release/mzn-lsp" },
+          cmd = { "/home/enrdaim/mzn-lsp/target/release/mzn-lsp" },
           filetypes = { "zinc" },
           root_dir = util.root_pattern(".git", "."),
           settings = {},
@@ -84,7 +84,7 @@ return
       }
       end
 
-     lspconfig.my_custom_lsp.setup({})
+     lspconfig.mzn_lsp.setup({})
 
 
 
