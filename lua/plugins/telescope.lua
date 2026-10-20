@@ -1,5 +1,7 @@
 return {
-    {'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    {'nvim-telescope/telescope.nvim', version = '*',
+    cmd = 'Telescope',
+    keys = { '<leader>pf', '<leader>ps', '<leader>pS' },
     dependencies = {
         'nvim-lua/plenary.nvim',
         'nvim-telescope/telescope-live-grep-args.nvim'
