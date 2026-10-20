@@ -22,10 +22,10 @@ return {
                 augroup spelunker
                   autocmd!
                   " Setting for g:spelunker_check_type = 1:
-                  autocmd BufWinEnter,BufWritePost *.rst,*.vim,*.js,*.jsx,*.json,*.md,*.tex call spelunker#check()
-
-                  " Setting for g:spelunker_check_type = 2:
-                  autocmd CursorHold *.rst,*.vim,*.js,*.jsx,*.json,*.md call spelunker#check_displayed_words()
+                  " BufWritePost is deliberately omitted: spelunker#check() is a
+                  " whole-buffer Vimscript pass (~4s on a 20k-line file), which
+                  " made every save of a large file crawl.
+                  autocmd BufWinEnter *.rst,*.vim,*.js,*.jsx,*.json,*.md,*.tex call spelunker#check()
                 augroup END
                 ]])
                 vim.g.spelunker_spell_bad_group = "SpelunkerSpellBad"
