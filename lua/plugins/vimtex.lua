@@ -1,7 +1,7 @@
 return {
     {
         "lervag/vimtex",
-        lazy = false,
+        ft = { "tex", "plaintex", "latex", "bib" },
         init = function()
             -- Set local mapllocal mapleader
             -- vim.g.maplocalleader = ","

@@ -7,6 +7,8 @@ return
     "nvim-treesitter/nvim-treesitter",
     version = false, -- last release is way too old and doesn't work on Windows
     build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
+    cmd = { "TSInstall", "TSInstallFromGrammar", "TSUpdate", "TSUninstall", "TSLog" },
     opts = {
       highlight = { enable = true },
       indent = { enable = true },
@@ -59,5 +61,17 @@ return
   -- Automatically add closing tags for HTML and JSX
   {
     "windwp/nvim-ts-autotag",
+    ft = {
+      "html",
+      "xml",
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "vue",
+      "svelte",
+      "php",
+      "markdown",
+    },
   },
 }
